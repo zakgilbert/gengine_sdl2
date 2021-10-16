@@ -10,7 +10,7 @@ HDRS    := $(shell find $(SRCDIR) -name '*.h')
 SRCDIRS := $(shell find . -name '*.c' -exec dirname {} \; | uniq)
 OBJS    := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 
-CFLAGS := -std=gnu99 -ggdb3 -pedantic-errors -Wall
+CFLAGS := -Wall -ggdb3 -fcommon
 
 LDFLAGS := `sdl2-config --libs --cflags` -lSDL2_image -lm
 
