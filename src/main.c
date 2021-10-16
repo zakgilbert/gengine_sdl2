@@ -15,6 +15,8 @@
 #define ROWS 9
 #define COLS 6
 
+#define GAME_TITLE "Gengine"
+
 int FULLSCREEN_ON   = 0;
 int FRAMES_RENDERED = 0;
 int SECONDS_ELAPSED = 0;
@@ -54,7 +56,7 @@ int main(int argc, char** argv)
     SDL_init();
     set_up_timer();
 
-    window       = make_window("Chess");
+    window       = make_window(GAME_TITLE);
     renderer     = make_renderer(&window);
     input_thread = SDL_CreateThread(input_handler, "input_handler", NULL);
 
